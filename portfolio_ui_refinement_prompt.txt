@@ -1,0 +1,157 @@
+You are my AI coding partner.
+
+This is a UI refinement task.
+
+IMPORTANT
+
+Do NOT redesign the website.
+
+Do NOT rebuild any section.
+
+Do NOT rewrite working code.
+
+Do NOT change the overall design language.
+
+Only make the refinements listed below while preserving the existing Apple-inspired, premium, glassmorphism, and terminal aesthetic.
+
+Before making any changes, analyze the current HTML, CSS, and JavaScript so you understand which existing classes and styles can be reused.
+
+==================================================
+TASK 1
+HOME PAGE
+==================================================
+
+The portrait image on the Home page is still slightly too large.
+
+Reduce the image frame size a little more.
+
+Requirements
+
+• Keep it centered.
+• Keep the current spacing.
+• Keep the floating animation.
+• Keep the hover zoom.
+• Keep the rounded corners.
+• Keep object-fit: cover.
+• Keep the premium shadow.
+• Make the reduction subtle (around 10-15% smaller).
+• Do not affect the rest of the Home section.
+
+==================================================
+TASK 2
+CERTIFICATES PAGE
+==================================================
+
+The current Certificates page has unnecessary UI effects.
+
+Problems
+
+• The certificate items appear inside glass boxes.
+• There is an unnecessary shiny/glass hover effect.
+• The hover animation feels too heavy.
+• It does not match the clean terminal aesthetic.
+
+Remove all unnecessary box styling.
+
+Remove
+
+• Glass card appearance
+• Shiny reflections
+• Heavy glow
+• Large shadows
+• Unnecessary borders
+
+Restore the same clean terminal appearance used in the Projects page.
+
+Each certificate should simply appear as a clean terminal row.
+
+Hover behavior should be simple and elegant.
+
+On hover
+
+• Slight color transition
+• Small opacity change
+• Soft underline or subtle highlight if needed
+• Smooth transition
+• No glass effects
+• No large shadows
+• No reflections
+
+IMPORTANT
+
+The text must NOT move.
+
+Do NOT translate or shift the certificate text.
+
+Do NOT move the terminal symbols.
+
+Everything should stay fixed in place while hovering.
+
+==================================================
+TASK 3
+CONTACT PAGE
+==================================================
+
+The Contact page currently has the same problem.
+
+Remove
+
+• Glass boxes
+• Card appearance
+• Heavy hover effects
+• Shiny reflections
+• Large shadows
+
+The Contact page should visually match
+
+About
+
+Certificates
+
+Projects
+
+Everything should look like terminal output.
+
+Each contact row should consist of
+
+~
+
+❯
+
+Official icon
+
+Platform name
+
+Link or contact information
+
+Hover animation should be identical to the Projects page.
+
+Requirements
+
+• Smooth color transition
+• Small opacity change
+• Slight icon animation is acceptable
+• No text movement
+• No layout movement
+• No translateX
+• No shifting
+• No jumping
+• No scaling of the entire row
+
+The content should remain perfectly aligned before, during, and after hover.
+
+==================================================
+FINAL REQUIREMENTS
+==================================================
+
+Keep the existing design language.
+
+Reuse the current CSS classes wherever possible.
+
+Only simplify the UI.
+
+Do not introduce new visual styles.
+
+The Certificates page and Contact page should look clean, minimal, elegant, and consistent with the rest of the terminal-themed portfolio.
+
+Deliver clean, production-ready code without affecting any other section of the website.
