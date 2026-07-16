@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liquid Glass Nav Example</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0b0b12;
+      font-family: 'Kameron', serif;
+      font-weight: 700;
+      padding: 0 6vw;
+    }
+    nav {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30px;
+      z-index: 1000;
+      display: flex;
+      gap: 12px;
+      background: 
+        linear-gradient(120deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.08) 100%);
+      background-color: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,0.19), 0 1.5px 5px 0 rgba(255,255,255,0.06) inset;
+      backdrop-filter: blur(20px) saturate(180%);
+      padding: 3px 12px;
+      width: fit-content;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 4px;
+      transition: color .25s ease, transform .25s ease;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.2px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Kameron', serif;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: #ffffff;
+      transform: translateX(-50%);
+      transition: width .3s ease;
+      transform-origin: center;
+    }
+    nav a:hover, nav a:focus {
+      color: #fff;
+      transform: translateY(-2px);
+      filter: none;
+      background: none;
+      box-shadow: none;
+    }
+    nav a:hover::after, nav a:focus::after {
+      width: 100%;
+      transform: translateX(-50%);
+    }
+    main{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .hero-card{
+      width:360px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .image-frame{
+      width:300px;
+      height:380px;
+      border-radius:28px;
+      background:linear-gradient(145deg,#1d1d28,#12121a);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(255,255,255,.05) inset;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,.35);
+      font-family: 'Kameron', serif;
+    }
+    .hero-name{
+      margin-top:42px;
+      color:#fff;
+      font-family: 'Kameron', serif;
+      font-size:1.4rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Certificate</a>
+    <a href="#">Project</a>
+    <a href="#">Contact</a>
+  </nav>
+  <main>
+    <section class="hero-card">
+      <div class="image-frame">IMAGE</div>
+      <h1 class="hero-name">Your Name</h1>
+    </section>
+  </main>
+</body>
+</html>
