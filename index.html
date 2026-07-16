@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     html {
       scroll-behavior: smooth;
@@ -40,15 +41,17 @@
       justify-content: center;
       flex-wrap: wrap;
       max-width: min(92vw, 860px);
+      transition: transform .35s ease, box-shadow .35s ease;
     }
     nav a {
       color: #caff72;
       text-decoration: none;
-      padding: 5px 4px;
-      transition: color .25s ease, transform .25s ease;
+      padding: 7px 8px;
+      border-radius: 10px;
+      transition: color .25s ease, transform .25s ease, background-color .25s ease;
       display: inline-block;
       font-weight: 700;
-      font-size: 0.82rem;
+      font-size: clamp(0.8rem, 1.2vw, 0.95rem);
       letter-spacing: 0.2px;
       position: relative;
       overflow: hidden;
@@ -69,34 +72,40 @@
     nav a:hover, nav a:focus {
       color: #caff72;
       transform: translateY(-2px);
-      filter: none;
-      background: none;
-      box-shadow: none;
+      background: rgba(255,255,255,0.04);
     }
     nav a:hover::after, nav a:focus::after {
       width: 100%;
       transform: translateX(-50%);
     }
+    nav a.active {
+      color: #caff72;
+      background: rgba(255,255,255,0.08);
+    }
+    nav a.active::after {
+      width: 100%;
+    }
     main{
-      padding: 120px 0 90px;
+      padding: 82px 0 90px;
       min-height:100vh;
       display:flex;
       justify-content:center;
-      align-items:center;
+      align-items:flex-start;
     }
     .hero-card{
-      width:360px;
+      width:min(100%,560px);
       display:flex;
       flex-direction:column;
       align-items:center;
+      margin-top: 10px;
     }
     .image-frame{
-      width:300px;
-      height:380px;
+      width:clamp(330px,37vw,480px);
+      height:clamp(430px,49vw,620px);
       border-radius:28px;
       background:linear-gradient(145deg,#1d1d28,#12121a);
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(255,255,255,.05) inset;
+      box-shadow:0 26px 70px rgba(0,0,0,.5),0 0 42px rgba(255,255,255,.07) inset;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -112,15 +121,15 @@
       object-position:center;
       border-radius:inherit;
       animation: floatPortrait 8s ease-in-out infinite;
-      transition: transform .45s ease, filter .45s ease;
+      transition: transform .5s ease, filter .5s ease, box-shadow .5s ease;
       filter: saturate(102%) contrast(102%);
     }
     .image-frame:hover .portrait-image{
-      transform: scale(1.04);
+      transform: scale(1.06);
       filter: saturate(108%) contrast(104%);
     }
     .hero-name{
-      margin-top:64px;
+      margin-top:56px;
       color:#caff72;
       font-family: 'Kameron', serif;
       font-size:clamp(1.4rem, 3vw, 2rem);
@@ -133,7 +142,7 @@
     .certificate-section,
     .project-section,
     .contact-section{
-      min-height:100vh;
+      min-height:96vh;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -171,22 +180,6 @@
       flex: 1 1 360px;
       min-width: 0;
     }
-    .terminal-link{
-      display:block;
-      text-decoration:none;
-      border-radius:14px;
-      transition: transform .3s ease, background-color .3s ease, box-shadow .3s ease;
-      padding: 2px 8px;
-    }
-    .terminal-link:hover,
-    .terminal-link:focus{
-      transform: translateX(4px);
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 8px 24px rgba(0,0,0,.22);
-    }
-    .terminal-link .terminal-line{
-      margin-bottom: 10px;
-    }
     .terminal-url{
       display:flex;
       align-items:center;
@@ -202,6 +195,85 @@
     .terminal-link:focus .terminal-url{
       color:#caff72;
       opacity:1;
+    }
+    .project-item{
+      border-radius: 14px;
+      padding: 2px 8px;
+      transition: transform .35s ease, background-color .35s ease, box-shadow .35s ease;
+    }
+    .project-item:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 14px 30px rgba(0,0,0,.3), 0 0 22px rgba(202,255,114,.08);
+    }
+    .certificate-link{
+      position: relative;
+      display: block;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 8px 10px;
+      margin: 4px 0 10px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.015);
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+    }
+    .certificate-link::before{
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: linear-gradient(120deg, transparent 28%, rgba(202,255,114,.12) 50%, transparent 72%);
+      transform: translateX(-120%);
+      transition: transform .65s ease;
+      pointer-events: none;
+    }
+    .certificate-link:hover::before{
+      transform: translateX(120%);
+    }
+    .certificate-link:hover,
+    .certificate-link:focus{
+      transform: translateY(-5px);
+      border-color: rgba(202,255,114,.3);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 16px 36px rgba(0,0,0,.35), 0 0 30px rgba(202,255,114,.12);
+    }
+    .certificate-link .terminal-line{
+      margin-bottom: 8px;
+    }
+    .certificate-link .terminal-url{
+      margin: 0 0 6px 46px;
+    }
+    .contact-terminal-link{
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .contact-logo{
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #caff72;
+      background: rgba(11,11,18,.36);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: 1.18rem;
+      transition: transform .35s ease, color .35s ease, box-shadow .35s ease;
+      flex-shrink: 0;
+    }
+    .contact-terminal-link:hover .contact-logo,
+    .contact-terminal-link:focus .contact-logo{
+      transform: translateY(-2px) rotate(-5deg) scale(1.07);
+      box-shadow: 0 0 22px rgba(202,255,114,.2);
+    }
+    .contact-text{
+      color:#f5f5f5;
+      font-size:clamp(1rem, 2.5vw, 1.3rem);
+      font-weight:400;
+      font-family: 'Kameron', serif;
+      line-height: 1.55;
+      flex: 1 1 320px;
+      min-width: 0;
     }
     .section-divider{
       width:min(900px,90vw);
@@ -235,11 +307,11 @@
         gap: 10px;
       }
       .hero-card{
-        width: min(100%, 420px);
+        width: min(100%, 520px);
       }
       .image-frame{
-        width:min(82vw,300px);
-        height:min(104vw,380px);
+        width:min(80vw,400px);
+        height:min(103vw,540px);
       }
       .terminal-heading{
         margin-bottom: 40px;
@@ -255,35 +327,79 @@
     @media (max-width: 640px){
       body{
         padding: 0 4vw;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
       }
       main{
-        padding-top: 130px;
+        padding-top: 50px;
+        padding-bottom: 58px;
       }
       nav{
-        gap: 8px;
+        top: auto;
+        bottom: max(8px, env(safe-area-inset-bottom));
+        gap: 3px;
         border-radius: 16px;
+        width: min(94vw, 520px);
+        max-width: 95vw;
+        padding: 5px 6px;
+        box-shadow: 0 10px 36px rgba(0,0,0,.4), 0 1.5px 5px rgba(255,255,255,.06) inset;
       }
       nav a{
-        font-size: 0.78rem;
+        font-size: 0.68rem;
         letter-spacing: .1px;
+        padding: 7px 6px;
+        min-width: 18%;
+        text-align: center;
       }
       .hero-name{
-        margin-top: 40px;
+        margin-top: 30px;
+      }
+      .image-frame{
+        width:min(84vw,342px);
+        height:min(110vw,452px);
       }
       .about-section,
       .certificate-section,
       .project-section,
       .contact-section{
-        padding-top: 92px;
+        padding-top: 64px;
+        padding-bottom: 58px;
       }
       .terminal-heading{
-        margin-bottom: 30px;
+        font-size: clamp(1.45rem, 7vw, 1.8rem);
+        margin-bottom: 24px;
       }
       .terminal-line{
-        margin: 16px 0;
+        font-size: clamp(1rem, 4.4vw, 1.2rem);
+        margin: 13px 0;
+      }
+      .text,
+      .contact-text{
+        font-size: clamp(.92rem, 3.5vw, 1.02rem);
+        line-height: 1.45;
       }
       .terminal-url{
+        font-size: clamp(.8rem, 3.1vw, .92rem);
         margin: -2px 0 18px 0;
+      }
+      .certificate-link .terminal-url{
+        margin: -2px 0 12px 0;
+      }
+      .contact-logo{
+        width: 34px;
+        height: 34px;
+        font-size: .96rem;
+        border-radius: 10px;
+      }
+    }
+    @media (min-width: 1600px){
+      body{
+        padding: 0 8vw;
+      }
+      .terminal-window{
+        width: min(1100px, 84vw);
+      }
+      nav{
+        max-width: 920px;
       }
     }
   </style>
@@ -292,7 +408,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#certificate">Certificate</a>
+    <a href="#certificate">Certificates</a>
     <a href="#project">Project</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -301,7 +417,7 @@
       <div class="image-frame">
         <img
           class="portrait-image"
-          src="https://i.pravatar.cc/800?img=12"
+          src="zt.png"
           alt="Portrait of Zidan Thapaliya"
           loading="eager"
         >
@@ -329,11 +445,34 @@
       <span class="command">CERTIFICATES</span>
     </div>
 
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Google UX Design Professional Certificate</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Harvard CS50 Introduction to Computer Science</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Meta Front-End Developer Certificate</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Responsive Web Design Certification</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Python Programming Certificate</span></div>
+    <a class="certificate-link" href="Generative-Ai.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Generative AI Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="Cybersecurity.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Cybersecurity Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="IOT.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Internet of Things (IoT) Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="EthicalHacking.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Ethical Hacking Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="Cloud-Secutity.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Cloud Security Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="Networking.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Networking Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
+    <a class="certificate-link" href="Cloud-foundation.pdf" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Cloud Foundation Certificate</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>View Certificate</span></div>
+    </a>
   </div>
 </section>
 <hr class="section-divider">
@@ -342,10 +481,10 @@
     <div class="terminal-heading">
       <span class="command">PROJECTS</span>
     </div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Personal Portfolio with Glassmorphism UI</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Task Management Web App with Responsive Dashboard</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">RESTful API Service with Authentication</span></div>
-    <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Modern Landing Page with Premium Micro-Interactions</span></div>
+    <div class="terminal-line project-item"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Personal Portfolio with Glassmorphism UI</span></div>
+    <div class="terminal-line project-item"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Task Management Web App with Responsive Dashboard</span></div>
+    <div class="terminal-line project-item"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">RESTful API Service with Authentication</span></div>
+    <div class="terminal-line project-item"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Modern Landing Page with Premium Micro-Interactions</span></div>
   </div>
 </section>
 <hr class="section-divider">
@@ -354,30 +493,25 @@
     <div class="terminal-heading">
       <span class="command">CONTACT</span>
     </div>
-
-    <a class="terminal-link" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">GitHub</span></div>
-      <div class="terminal-url"><span class="arrow">→</span><span>https://github.com/yourusername</span></div>
+    <a class="certificate-link contact-terminal-link" href="https://github.com/Zidan300" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="contact-logo"><i class="fa-brands fa-github"></i></span><span class="contact-text">GitHub</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>https://github.com/Zidan300</span></div>
     </a>
-
-    <a class="terminal-link" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">LinkedIn</span></div>
-      <div class="terminal-url"><span class="arrow">→</span><span>https://linkedin.com/in/yourusername</span></div>
+    <a class="certificate-link contact-terminal-link" href="https://www.instagram.com/10_bytex_24" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="contact-logo"><i class="fa-brands fa-instagram"></i></span><span class="contact-text">Instagram</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>https://www.instagram.com/10_bytex_24</span></div>
     </a>
-
-    <a class="terminal-link" href="mailto:your@email.com">
-      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Email</span></div>
-      <div class="terminal-url"><span class="arrow">→</span><span>mailto:your@email.com</span></div>
+    <a class="certificate-link contact-terminal-link" href="https://t.me/zidanthapaliya" target="_blank" rel="noopener noreferrer">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="contact-logo"><i class="fa-brands fa-telegram"></i></span><span class="contact-text">Telegram</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>https://t.me/zidanthapaliya</span></div>
     </a>
-
-    <a class="terminal-link" href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
-      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Instagram</span></div>
-      <div class="terminal-url"><span class="arrow">→</span><span>https://instagram.com/yourusername</span></div>
+    <a class="certificate-link contact-terminal-link" href="mailto:zonnyrt@gmail.com">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="contact-logo"><i class="fa-solid fa-envelope"></i></span><span class="contact-text">Email</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>zonnyrt@gmail.com</span></div>
     </a>
-
-    <a class="terminal-link" href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
-      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="text">Facebook</span></div>
-      <div class="terminal-url"><span class="arrow">→</span><span>https://facebook.com/yourusername</span></div>
+    <a class="certificate-link contact-terminal-link" href="tel:+9779803390209">
+      <div class="terminal-line"><span class="tilde">~</span><span class="arrow">❯</span><span class="contact-logo"><i class="fa-solid fa-phone"></i></span><span class="contact-text">Phone</span></div>
+      <div class="terminal-url"><span class="arrow">→</span><span>9803390209</span></div>
     </a>
   </div>
 </section>
@@ -391,6 +525,19 @@
   }, { threshold: 0.2 });
 
   document.querySelectorAll('.reveal').forEach((section) => observer.observe(section));
+  const navLinks = document.querySelectorAll('nav a');
+  const scrollSections = document.querySelectorAll('main[id], section[id]');
+
+  const activeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('active', isActive);
+      });
+    });
+  }, { threshold: 0.55 });
+  scrollSections.forEach((section) => activeObserver.observe(section));
 </script>
 </body>
 </html>

@@ -1,0 +1,610 @@
+You are my AI coding partner.
+
+You are continuing my existing portfolio website.
+
+IMPORTANT:
+Do NOT rebuild the website.
+Do NOT redesign completed sections.
+Do NOT rewrite working code.
+Only modify what is requested.
+Preserve all existing functionality, styling, colors, typography, spacing, animations, and responsiveness unless explicitly instructed otherwise.
+
+If an existing component already works, improve it instead of replacing it.
+
+Always think like a Senior Frontend Engineer, UI/UX Designer, and Creative Director.
+
+==================================================
+CURRENT WEBSITE
+==================================================
+
+The website already contains:
+
+✓ Home
+✓ About
+✓ Certificates
+✓ Projects
+✓ Contact
+
+Theme
+
+• Premium
+• Apple Inspired
+• Minimal
+• Glassmorphism
+• Terminal Aesthetic
+• Elegant
+• Modern
+
+Colors
+
+Background
+#0b0b12
+
+Primary Accent
+#caff72
+
+Terminal Blue
+#22b8ff
+
+Terminal Green
+#62e61d
+
+Font
+
+Kameron
+
+The entire design language must remain exactly the same.
+
+==================================================
+TASK 1
+HOME SECTION
+==================================================
+
+The Home page currently has too much empty space between the floating navigation bar and the portrait image.
+
+Without affecting any other section:
+
+• Move the hero section upward.
+• Reduce unnecessary empty spacing.
+• Keep perfect visual balance.
+• Keep the image centered.
+
+Increase the portrait image frame significantly.
+
+Current image is too small.
+
+The portrait should become the main visual focus.
+
+Keep
+
+• rounded corners
+• glass effect
+• premium shadow
+• object-fit: cover
+• floating animation
+• hover zoom
+• responsive sizing
+
+Do NOT affect
+
+About
+
+Certificates
+
+Projects
+
+Contact
+
+==================================================
+TASK 2
+CERTIFICATES
+==================================================
+
+Completely improve the Certificates section.
+
+Instead of plain text, every certificate should become a premium clickable terminal item.
+
+Example
+
+~ ❯ Google UX Design Professional Certificate
+
+      → View Certificate
+
+Clicking anywhere on the certificate should open the corresponding PDF in a NEW browser tab.
+
+I will place all PDFs inside
+
+certificates/
+
+Create links for exactly seven certificates.
+
+Use placeholder filenames
+
+certificates/certificate1.pdf
+
+certificates/certificate2.pdf
+
+certificates/certificate3.pdf
+
+certificates/certificate4.pdf
+
+certificates/certificate5.pdf
+
+certificates/certificate6.pdf
+
+certificates/certificate7.pdf
+
+Every certificate should include
+
+• hover glow
+
+• glass hover
+
+• premium shadow
+
+• lift animation
+
+• smooth transition
+
+• clickable cursor
+
+• elegant interaction
+
+Maintain the existing terminal design.
+
+==================================================
+TASK 3
+CONTACT PAGE
+==================================================
+
+Redesign ONLY the Contact section.
+
+Keep the Apple-inspired design language.
+
+Instead of plain links, create premium glass contact cards.
+
+Each card should automatically display the official brand icon.
+
+Use Font Awesome icons.
+
+Include
+
+GitHub
+
+Instagram
+
+Telegram
+
+Email
+
+Phone
+
+Each card should contain
+
+• Official icon
+
+• Platform name
+
+• Username/contact
+
+• Hover glow
+
+• Glass blur
+
+• Lift animation
+
+• Icon animation
+
+• Premium shadow
+
+• Smooth transitions
+
+• Rounded glass design
+
+==================================================
+MY CONTACT INFORMATION
+==================================================
+
+GitHub
+
+https://github.com/Zidan300
+
+Instagram
+
+https://www.instagram.com/10_bytex_24
+
+Telegram
+
+https://t.me/zidanthapaliya
+
+Email
+
+zonnyrt@gmail.com
+
+Phone
+
+9803390209
+
+Use
+
+GitHub
+
+https://github.com/Zidan300
+
+Instagram
+
+https://www.instagram.com/10_bytex_24
+
+Telegram
+
+https://t.me/zidanthapaliya
+
+Email
+
+mailto:zonnyrt@gmail.com
+
+Phone
+
+tel:+9779803390209
+
+External links must open in a new browser tab.
+
+==================================================
+TASK 4
+PREMIUM ANIMATIONS
+==================================================
+
+Improve every interaction.
+
+Navigation
+
+• underline animation
+
+• smooth transition
+
+• active indicator
+
+Projects
+
+• premium hover
+
+• lift
+
+• glow
+
+• shadow
+
+Certificates
+
+• glass glow
+
+• lift
+
+• animated background
+
+Contact
+
+• icon animation
+
+• glow
+
+• scale
+
+• lift
+
+• shadow
+
+Portrait
+
+• floating animation
+
+• hover zoom
+
+• elegant shadow
+
+Animations should feel luxurious.
+
+Never flashy.
+
+==================================================
+TASK 5
+FOOTER
+==================================================
+
+Create a premium footer.
+
+Include
+
+Zidan Thapaliya
+
+Building meaningful digital experiences.
+
+Current Year
+
+Copyright
+
+Back To Top button
+
+GitHub
+
+Instagram
+
+Telegram
+
+Email
+
+Phone
+
+Glass background
+
+Elegant divider
+
+Premium hover effects
+
+==================================================
+TASK 6
+RESPONSIVE EXPERIENCE (HIGHEST PRIORITY)
+==================================================
+
+This task is EXTREMELY IMPORTANT.
+
+The website must look professionally designed on every device.
+
+Do NOT simply shrink elements.
+
+Design responsive layouts intentionally.
+
+Supported devices
+
+• 4K Displays
+
+• Large Desktop Monitors
+
+• Desktop PCs
+
+• MacBooks
+
+• Windows Laptops
+
+• Small Laptops
+
+• Tablets (Portrait & Landscape)
+
+• Foldable Phones
+
+• Large Phones
+
+• Small Phones
+
+• iPhone SE and similar devices
+
+The website must NEVER have
+
+• Horizontal scrolling
+
+• Broken layouts
+
+• Cropped images
+
+• Cropped text
+
+• Overflowing buttons
+
+• Misaligned sections
+
+• Overlapping elements
+
+Everything should resize naturally.
+
+==================================================
+DESKTOP EXPERIENCE
+==================================================
+
+Keep the current desktop design.
+
+Navigation remains floating at the TOP.
+
+Maintain premium spacing.
+
+Maintain generous whitespace.
+
+Keep the large portrait.
+
+==================================================
+TABLET EXPERIENCE
+==================================================
+
+Smoothly adapt the layout.
+
+Reduce spacing only where necessary.
+
+Resize typography proportionally.
+
+Maintain premium spacing.
+
+Cards should automatically rearrange into responsive grids.
+
+==================================================
+MOBILE EXPERIENCE
+==================================================
+
+Completely optimize the website for mobile users.
+
+DO NOT keep the navigation bar at the top.
+
+Instead,
+
+Move the floating glass navigation bar to the BOTTOM of the screen.
+
+Reason
+
+Modern mobile applications place navigation near the thumb for better one-handed usability.
+
+Requirements
+
+• Fixed bottom navigation
+
+• Floating glass dock
+
+• Blur effect
+
+• Rounded corners
+
+• Premium shadow
+
+• Safe-area support for iPhone
+
+• Responsive width
+
+• Always visible
+
+• Does not overlap page content
+
+• Comfortable thumb reach
+
+• Beautiful appearance
+
+Bottom navigation should contain
+
+Home
+
+About
+
+Certificates
+
+Projects
+
+Contact
+
+==================================================
+MOBILE NAVIGATION
+==================================================
+
+The bottom navigation should feel like a premium iOS application.
+
+Requirements
+
+• Floating glass dock
+
+• Active page indicator
+
+• Smooth transitions
+
+• Elegant tap animations
+
+• Large touch targets
+
+• Excellent spacing
+
+• Easy one-handed usability
+
+==================================================
+RESPONSIVE TYPOGRAPHY
+==================================================
+
+Headings
+
+Paragraphs
+
+Buttons
+
+Cards
+
+Navigation
+
+Everything should scale naturally.
+
+Text should never overflow.
+
+==================================================
+RESPONSIVE IMAGES
+==================================================
+
+Portrait image
+
+• Always centered
+
+• Never stretched
+
+• Never cropped incorrectly
+
+• Maintain aspect ratio
+
+• Scale naturally
+
+Projects
+
+Responsive cards
+
+Certificates
+
+Responsive spacing
+
+Contact
+
+Responsive cards
+
+Footer
+
+Responsive layout
+
+==================================================
+TASK 7
+CODE QUALITY
+==================================================
+
+Reuse existing CSS classes.
+
+Avoid duplicate CSS.
+
+Keep JavaScript minimal.
+
+Keep HTML semantic.
+
+Keep CSS modular.
+
+Never rewrite working code unless absolutely necessary.
+
+Only extend the existing project.
+
+==================================================
+FINAL GOAL
+==================================================
+
+The final portfolio should look like a premium Apple-inspired developer portfolio that could realistically compete with award-winning portfolio websites.
+
+Every section should feel handcrafted.
+
+Every animation should feel intentional.
+
+Every hover interaction should feel premium.
+
+Every layout should be responsive.
+
+Every device should have its own polished experience.
+
+Before making any changes
+
+1. Analyze the current HTML, CSS and JavaScript.
+
+2. Understand the existing architecture.
+
+3. Preserve all existing functionality.
+
+4. Modify only what is necessary.
+
+5. Reuse existing classes whenever possible.
+
+6. Keep every existing animation unless improving it.
+
+7. Ensure every certificate opens its PDF in a new browser tab.
+
+8. Ensure every contact link uses the exact URLs provided.
+
+9. Ensure desktop navigation stays at the top.
+
+10. Ensure mobile navigation becomes a floating bottom glass dock.
+
+11. Ensure the website looks premium on Desktop, Laptop, Tablet and Mobile.
+
+12. Deliver clean, modular, production-ready code without breaking the existing design.
